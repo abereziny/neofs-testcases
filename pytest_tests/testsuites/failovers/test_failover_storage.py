@@ -17,8 +17,8 @@ logger = logging.getLogger("NeoLogger")
 stopped_nodes: list[StorageNode] = []
 
 
-@pytest.fixture(scope="function", autouse=True)
 @allure.step("Return all stopped hosts")
+@pytest.fixture(scope="function", autouse=True)
 def after_run_return_all_stopped_hosts(cluster: Cluster):
     yield
     return_stopped_hosts(cluster)

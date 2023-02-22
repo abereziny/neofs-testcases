@@ -24,8 +24,8 @@ blocked_nodes: list[StorageNode] = []
 @pytest.mark.failover
 @pytest.mark.failover_network
 class TestFailoverNetwork(ClusterTestBase):
-    @pytest.fixture(autouse=True)
     @allure.step("Restore network")
+    @pytest.fixture(autouse=True)
     def restore_network(self):
         yield
 
